@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Appointments List</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Doctor</th>
+            <th>Patient</th>
+            <th>Date</th>
+            <th>Symptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in appointments %}
+        <tr>
+            <td>Dr. {{ appointment.doctor.user.first_name }} {{ appointment.doctor.user.last_name }}</td>
+            <td>{{ appointment.patient_name }}</td> <!-- Update this to use patient_name -->
+            <td>{{ appointment.appointment_date }}</td>
+            <td>{{ appointment.symptoms }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No appointments available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'add_appointment' %}">Add New Appointment</a>
+{% endblock %}

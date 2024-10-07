@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chan System</title>
+    <!-- Load static files -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/scripts.js' %}"></script>
+</head>
+<body>
+    <header>
+        <img src="{% static 'img/logo.png' %}" alt="Hospital Logo">
+        <h1>Welcome to the SM Hospital </h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
+            <li><a href="{% url 'patient_list' %}">Patients</a></li>
+            <li><a href="{% url 'appointment_list' %}">Appointments</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

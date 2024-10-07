@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .stats {
+        font-family: 'Arial', sans-serif; /* Custom font for stats section */
+        text-align: center; /* Center the text */
+        font-size: 1.5em; /* Increase the font size */
+        font-weight: bold; /* Make the text bold */
+        color: #999c9e; /* Stylish blue color for the text */
+        margin-top: 20px; /* Add space above the stats */
+    }
+
+    .stats p {
+        margin: 10px 0; /* Space between each stat line */
+    }
+</style>
+
+ <!-- This heading will remain unchanged -->
+
+<div class="stats">
+    <h1>Dashboard</h1>
+    <p>Doctors: {{ doctors.count }}</p>
+    <p>Patients: {{ patients.count }}</p>
+    <p>Appointments: {{ appointments.count }}</p>
+</div>
+{% endblock %}
